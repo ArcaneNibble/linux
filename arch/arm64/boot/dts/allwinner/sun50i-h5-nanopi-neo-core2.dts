@@ -3,6 +3,7 @@
 
 /dts-v1/;
 #include "sun50i-h5.dtsi"
+#include "sun50i-h5-cpu-opp.dtsi"
 
 #include <dt-bindings/gpio/gpio.h>
 
@@ -60,6 +61,10 @@
 		gpio = <&r_pio 0 2 GPIO_ACTIVE_HIGH>; /* PL2 */
 		status = "okay";
 	};
+};
+
+&cpu0 {
+	cpu-supply = <&reg_vdd_cpux>;
 };
 
 &ehci0 {
